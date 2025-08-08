@@ -1,42 +1,19 @@
-#include <iostream>
+#include<iostream>
 #include <vector>
+#include<unordered_map>
 using namespace std;
 
-int main() {
-   int n;
-   cin>>n;
-   for(int i=0;i<n;i++){
-    int spaces = n-i-1;
-    int spaces2 = 2*i-1;
-    for(char j=0;j<spaces;j++){
-      cout<<" ";
-    }
-    cout<<"*";
-    for(int j=0;j<spaces2;j++){
-      cout<<" ";
-    }
-    if(i==0){
-      cout<<endl; 
-      continue;
-    } 
-    cout<<"*";
-    cout<<endl;
-   }
+int main(){
+  vector<int> nums={2,7,11,15};
+  unordered_map<int, int> myMap;
 
-   for(int i=n-1;i>0;i--){
-    int spaces = n-i;
-    int spaces2 = 2*i-3;
-    for(char j=0;j<spaces;j++){
-      cout<<" ";
+  int target = 9;
+  for(int i=0;i<nums.size();i++){
+    int compliment = target - nums[i];
+    auto it = myMap.find(compliment);
+    if(it != myMap.end()){
+      return {it ->second,i};
     }
-    cout<<"*";
-    for(int j=0;j<spaces2;j++){
-      cout<<" ";
-    }
-    if(i!=1) cout<<"*"; 
-  
-    cout<<endl;
-   }
-   
-  return 0;
+    myMap[nums[i]] = i;
+  }
 }

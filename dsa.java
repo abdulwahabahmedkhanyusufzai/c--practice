@@ -12,12 +12,7 @@ public class dsa {
         System.out.print("Enter the first number: ");
         int a = sc.nextInt();
 
-        System.out.print("Enter the second number: ");
-        int b = sc.nextInt();
-
-        System.out.print("Enter the second number: ");
-        int c = sc.nextInt();
-
+       
         sc.close();
         int result = printAverage(a,b,c);
         System.out.println(result);
